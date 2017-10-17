@@ -1,10 +1,15 @@
 package com.epam.lab.graph;
 
 
-import java.util.List;
+import java.util.Set;
 
-public class Graph {
-  private List<Vertex> vertexList;
-  private List<Edge> edgeList;
-
+public interface Graph {
+  void addEdge(Edge edge);
+  boolean deleteEdge(Edge edge);
+  void addVertex(Vertex vertex);
+  boolean deleteVertex(Vertex vertex);
+  int density();
+  Set<Vertex> findNeighbors(Vertex vertex);
+  int deg(Vertex vertex);
+  Set<Vertex> findPath(Vertex start, Vertex end);
 }
